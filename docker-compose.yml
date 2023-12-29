@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  web:
+    image: nginx
+    ports:
+      - 1081:80
+    volumes:
+      - ""./public:/usr/share/nginx/html"
+      - "./nginx/nginx.conf:/etc/nginx/nginx.conf:ro"
+      - "./nginx/conf.d:/etc/nginx/conf.d:ro"
+    extra_hosts:
+      - "docker.host:host-gateway"
